@@ -1,0 +1,31 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean class="com.spring.bean.User" id="usr1Obj" scope="prototype">
+		<property name="userId" value="100" />
+		<property name="name" ref="userName" /> <!--  DI  -->
+		<property name="city" value="Chennai" />	
+	</bean>
+	
+	<bean class="java.lang.String" id="userName">
+		<constructor-arg  value="Harish Manana" />
+	</bean>
+	
+	<bean class="com.spring.bean.User" id="usr2Obj">
+		<constructor-arg name="city" value="Delhi" />
+		<constructor-arg name="name" value="Veena" />
+	</bean>
+	
+	<bean class="com.spring.bean.Department" id="dept">
+		<property name="department" value="Admin" />
+		<property name="customer" ref="usr1Obj" /> <!--  Dependency Injection -->
+	</bean>
+
+	<bean class="com.spring.bean.Department" id="dep">
+		<constructor-arg ref="usr1Obj" />
+		<constructor-arg value="Sales" />
+	</bean>
+
+</beans>

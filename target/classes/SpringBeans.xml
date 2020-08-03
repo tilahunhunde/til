@@ -1,0 +1,19 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+<!-- IOC -->
+	<bean id="user" class="com.spring.bean.User" scope="prototype">
+		<property name="city" value="Bengaluru" />
+		<property name="name" value="Harish Manana" />
+	</bean>
+	<bean id="userCtor" class="com.spring.bean.User">
+		<constructor-arg value="Nbj" />
+		<constructor-arg value="New Delhi" />
+	</bean>
+	<!-- DI -->
+	<bean id="department" class="com.spring.bean.Department" >
+		<property name="customer" ref="user" />
+		<property name="department" value="Admin" />
+	</bean>
+</beans>
