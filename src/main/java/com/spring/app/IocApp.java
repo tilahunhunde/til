@@ -11,6 +11,7 @@ import com.spring.bean.Department;
 import com.spring.bean.User;
 
 public class IocApp {
+	//This is new line added
 	public static void main(String[] args) {
 //		Resource res = new FileSystemResource("src/main/resources/beans.xml");
 //		XmlBeanFactory appCtx = new XmlBeanFactory(res);
